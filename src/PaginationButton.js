@@ -41,7 +41,6 @@ const PaginationButton = React.createClass({
 
     let {
       className,
-      ...anchorProps,
       children
     } = this.props;
 
