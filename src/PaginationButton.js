@@ -41,13 +41,12 @@ const PaginationButton = React.createClass({
 
     let {
       className,
-      ...anchorProps,
       children
     } = this.props;
 
     return (
       <li className={classNames(className, classes, 'page-item')} style={{cursor: 'pointer'}}>
-        <a className="page-link" href="" onClick={this.handleClick}>
+        <a className="page-link" onClick={this.handleClick}>
           {children}
         </a>
       </li>
