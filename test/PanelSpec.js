@@ -105,6 +105,15 @@ describe('Panel', () => {
     assert.equal(anchor.getAttribute('href'), '#testid');
   });
 
+  it('Should not add href if no id is passed', () => {
+    let instance = ReactTestUtils.renderIntoDocument(
+      <Panel collapsible={true} header="Heading">Panel content</Panel>
+    );
+    assert.notOk(ReactDOM.findDOMNode(instance).id);
+    let anchor = ReactDOM.findDOMNode(instance).querySelector('.panel-title a');
+    assert.equal(anchor.getAttribute('href'), undefined);
+  });
+
   it('Should be open', () => {
     let instance = ReactTestUtils.renderIntoDocument(
       <Panel collapsible={true} expanded={true} header="Heading">Panel content</Panel>
