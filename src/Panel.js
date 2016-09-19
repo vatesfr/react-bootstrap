@@ -201,7 +201,7 @@ let Panel = React.createClass({
   renderAnchor(header, headerRole) {
     return (
       <a
-        href={'#' + (this.props.id || '')}
+        href={this.props.id && ('#' + this.props.id)}
         aria-controls={this.props.collapsible ? this.props.id : null}
         className={this.isExpanded() ? null : 'collapsed'}
         aria-expanded={this.isExpanded()}
